@@ -7,7 +7,7 @@ const char* get_nome(Requisicao* requisicao){
     return requisicao->nome;
 }
 
-const char* get_inscricao(Requisicao* requisicao){
+int get_inscricao(Requisicao* requisicao){
     return requisicao->inscricao;
 }
 
@@ -15,18 +15,19 @@ const char* get_procedimento(Requisicao* requisicao){
     return requisicao->procedimento;
 }
 
-Requisicao* cria_requisicao(char nome[40],char inscricao[40],char procedimento[40]){
+Requisicao* cria_requisicao(const char* nome, int inscricao,const char* procedimento){
     Requisicao* requisicao = (Requisicao*)malloc(sizeof(Requisicao));
     if(requisicao == NULL){
         printf("Alocacao de memoria mal sucedida!\n");
         return NULL;
     }
-    strncpy(requisicao->nome,nome,sizeof(requisicao->nome - 1));
-    requisicao->nome[sizeof(requisicao->nome - 1)] = '\0';
-    strncpy(requisicao->inscricao,inscricao,sizeof(requisicao->inscricao - 1));
-    requisicao->inscricao[sizeof(requisicao->inscricao - 1)] = '\0';
-    strncpy(requisicao->procedimento,procedimento,sizeof(requisicao->procedimento - 1));
-    requisicao->procedimento[sizeof(requisicao->procedimento - 1)] = '\0';
+    strncpy(requisicao->nome,nome,sizeof(requisicao->nome) - 1);
+    requisicao->nome[sizeof(requisicao->nome) - 1] = '\0';
+    
+    requisicao->inscricao = inscricao;
+
+    strncpy(requisicao->procedimento,procedimento,sizeof(requisicao->procedimento) - 1);
+    requisicao->procedimento[sizeof(requisicao->procedimento) - 1] = '\0';
 
     return requisicao;
 }

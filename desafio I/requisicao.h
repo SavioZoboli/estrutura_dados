@@ -7,7 +7,7 @@
 
 typedef struct Requisicao {
     char nome[40];
-    char inscricao[40];
+    int inscricao;
     char procedimento[40];
 } Requisicao;
 
@@ -15,11 +15,11 @@ typedef struct Requisicao {
 
 const char* get_nome(Requisicao* requisicao);
 
-const char* get_inscricao(Requisicao* requisicao);
+int get_inscricao(Requisicao* requisicao);
 
 const char* get_procedimento(Requisicao* requisicao);
 
-Requisicao* cria_requisicao(char nome[40],char inscricao[40],char procedimento[40]);
+Requisicao* cria_requisicao(const char* nome,int inscricao,const char* procedimento);
 
 int libera(Requisicao* requisicao);
 
