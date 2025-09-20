@@ -5,13 +5,7 @@
 #ifndef REQUISICAO_H
 #define REQUISICAO_H
 
-typedef struct Requisicao {
-    char nome[40];
-    int inscricao;
-    char procedimento[40];
-} Requisicao;
-
-
+typedef struct Requisicao_ Requisicao;
 
 const char* get_nome(Requisicao* requisicao);
 

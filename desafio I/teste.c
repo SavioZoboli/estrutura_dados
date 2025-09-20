@@ -17,7 +17,7 @@ int main() {
     char procedimentos[][20] = {"123.1", "345.6", "678.9", "098.1", "758.5", "23.4", "5.98", "4,32", "3.3", "1.4"};
     //Vetor de procedimentos de 20 caracteres com quantidade de posições dinâmicas
     Estrutura *estrutura = create();
-    // ? O objeto Estrutura possui um método chamado create(), o que ele faz?
+    //  O objeto Estrutura possui um método chamado create()
     // * Palpite: Create inicializa uma lista vazia
     int i;
     Requisicao *requisicao;
@@ -42,5 +42,6 @@ int main() {
         // * Palpite: Libera o espaço da memória (dica de que precisamos usar malloc ou calloc)
     }
     libera_estrutura(estrutura);
+    // * Função que libera a estrutura completa
     return EXIT_SUCCESS;
 }

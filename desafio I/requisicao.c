@@ -3,6 +3,13 @@
 #include <string.h>
 #include "requisicao.h"
 
+typedef struct Requisicao_ {
+    char nome[40];
+    int inscricao;
+    char procedimento[40];
+} Requisicao;
+
+
 const char* get_nome(Requisicao* requisicao){
     return requisicao->nome;
 }
